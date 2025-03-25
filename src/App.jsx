@@ -7,11 +7,25 @@ import Footer from "./components/footer/footer";
 import MovieCard from "./components/movieCard/MovieCard";
 import NavBar from "./components/navBar/NavBar";
 import SocialLinks from "./components/socialLinks/SocialLinks";
-import './App.css'
+import "./App.css";
 
 const App = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
+
+  const mudaTema = () => {
+    const tema = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    document.documentElement.setAttribute("data-bs-theme", tema);
+  };
+  mudaTema();
+
+
+  // Listen for changes in the color scheme
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", mudaTema);
 
   //Utilizando chave de API do arquivo .env
   //const apiKey = import.meta.env.VITE_OMDB_API_KEY;
@@ -38,20 +52,39 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <div className="logo">
-        <NavBar logo={Logo} />
-
-        <div className="search">
-          <input
-            onKeyDown={handleKeyPress}
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-            placeholder="Pesquise por filmes"
-          />
-          <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
+    <div class="">
+      <nav
+        class="navbar bg-secondary border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <div className="divLogo">
+          <img width="175" height="50" class="m-2" src={Logo} alt="" />
         </div>
-      </div>
+
+        <div className="divPesquisa">
+          <form class="d-flex justify-content-center" role="search">
+            <input
+              onKeyDown={handleKeyPress}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder="Pesquise por filmes"
+            />
+            <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
+          </form>
+        </div>
+        <div className="divMenu">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
 
       {movies?.length > 0 ? (
         <div className="container">
