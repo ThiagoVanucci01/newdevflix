@@ -1,0 +1,9 @@
+#socialLinks {
+    list-style: none;
+    & a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  

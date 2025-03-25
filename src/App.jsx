@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import Footer from "./components/footer/footer";
 import MovieCard from "./components/movieCard/MovieCard";
 import NavBar from "./components/navBar/NavBar";
+import SocialLinks from "./components/socialLinks/SocialLinks";
+import './App.css'
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -36,17 +38,19 @@ const App = () => {
   };
 
   return (
-    <div id="app">
-      <NavBar logo={Logo}/>
+    <div className="app">
+      <div className="logo">
+        <NavBar logo={Logo} />
 
-      <div className="search">
-        <input
-          onKeyDown={handleKeyPress}
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Pesquise por filmes"
-        />
-        <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
+        <div className="search">
+          <input
+            onKeyDown={handleKeyPress}
+            onChange={(e) => setSearch(e.target.value)}
+            type="text"
+            placeholder="Pesquise por filmes"
+          />
+          <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
+        </div>
       </div>
 
       {movies?.length > 0 ? (
@@ -63,6 +67,16 @@ const App = () => {
         devName={" ThiagoVanucci"}
         devLink={"https://github.com/ThiagoVanucci01"}
       />
+      <div id="socialLinks">
+        <SocialLinks
+          link={"https://github.com/ThiagoVanucci01"}
+          icon={"logo-github"}
+        />
+        <SocialLinks
+          link={"https://www.instagram.com/thiago_vanucc1/"}
+          icon={"logo-instagram"}
+        />
+      </div>
     </div>
   );
 };

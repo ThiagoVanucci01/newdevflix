@@ -84,6 +84,15 @@ body {
   flex-wrap: wrap;
 }
 
+#socialLinks {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+
+  font-size: 24px;
+}
+
 @media screen and (max-width: 600px) {
   .app {
     padding: 4rem 2rem;
