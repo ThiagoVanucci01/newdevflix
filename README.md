@@ -1,12 +1,21 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# DEVFLIX
 
-Currently, two official plugins are available:
+A Devflix é uma plataforma de filmes e séries, inspirada na Netflix, focada em inovação e desenvolvimento. Trazendo breves descrições sobre o filme escolhido.
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Temas dark e light
+- Busca de filme desejado
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Referência
+
+ - [DEVFLIX](https://devflix-i2yzmbcqi-di0rio.vercel.app/)
+
+## Autores
+
+- [@ThiagoVanucci01](https://github.com/ThiagoVanucci01)
+
+- [@tiagop244](https://github.com/tiagop244)
+
