@@ -3,12 +3,13 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import Logo from "./assets/devflix.png";
 import Lupa from "./assets/search.svg";
 import { useEffect, useState } from "react";
-import Footer from "./components/footer/footer";
-import MovieCard from "./components/movieCard/MovieCard";
-import NavBar from "./components/navBar/NavBar";
-import SocialLinks from "./components/socialLinks/SocialLinks";
+import Footer from "./components/Footer/Footer";
+
+import NavBar from "./components/NavBar/NavBar";
+import SocialLinks from "./components/SocialLinks/SocialLinks";
 import "./App.css";
 import "./scss/styles.scss";
+import MovieCard from "./components/movieCard/MovieCard";
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -102,7 +103,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div class="container d-flex justify-content-center align-items-center flex-wrap mt-3 w-100">
           {movies.map((movie, index) => (
-            <MovieCard key={index} apiUrl={apiUrl} {...movie} />
+          <MovieCard key={index} apiUrl={apiUrl} {...movie} />
           ))}
         </div>
       ) : (
