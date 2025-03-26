@@ -8,7 +8,7 @@ import MovieCard from "./components/movieCard/MovieCard";
 import NavBar from "./components/navBar/NavBar";
 import SocialLinks from "./components/socialLinks/SocialLinks";
 import "./App.css";
-import "./scss/styles.scss"
+import "./scss/styles.scss";
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -62,7 +62,6 @@ const App = () => {
           <img width="175" height="50" class="m-2" src={Logo} alt="" />
         </div>
 
-        
         <div class="divPesquisa ">
           <div class="search-bar ">
             <div class="input-group ">
@@ -113,10 +112,9 @@ const App = () => {
       <Footer
         devName1={" ThiagoVanucci"}
         devLink1={"https://github.com/ThiagoVanucci01"}
-        devName2={" TiagoPereira"}
+        devName2={"TiagoPereira"}
         devLink2={"https://github.com/tiagop244"}
       />
-      
     </div>
   );
 };
