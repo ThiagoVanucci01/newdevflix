@@ -111,19 +111,12 @@ const App = () => {
       )}
 
       <Footer
-        devName={" ThiagoVanucci"}
-        devLink={"https://github.com/ThiagoVanucci01"}
+        devName1={" ThiagoVanucci"}
+        devLink1={"https://github.com/ThiagoVanucci01"}
+        devName2={" TiagoPereira"}
+        devLink2={"https://github.com/tiagop244"}
       />
-      <div id="socialLinks">
-        <SocialLinks
-          link={"https://github.com/ThiagoVanucci01"}
-          icon={"logo-github"}
-        />
-        <SocialLinks
-          link={"https://www.instagram.com/thiago_vanucc1/"}
-          icon={"logo-instagram"}
-        />
-      </div>
+      
     </div>
   );
 };
