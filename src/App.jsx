@@ -8,6 +8,7 @@ import MovieCard from "./components/movieCard/MovieCard";
 import NavBar from "./components/navBar/NavBar";
 import SocialLinks from "./components/socialLinks/SocialLinks";
 import "./App.css";
+import "./scss/styles.scss"
 
 const App = () => {
   const [search, setSearch] = useState("");
@@ -20,7 +21,6 @@ const App = () => {
     document.documentElement.setAttribute("data-bs-theme", tema);
   };
   mudaTema();
-
 
   // Listen for changes in the color scheme
   window
@@ -57,24 +57,38 @@ const App = () => {
         class="navbar bg-secondary border-bottom border-body"
         data-bs-theme="dark"
       >
+        <div></div>
         <div className="divLogo">
           <img width="175" height="50" class="m-2" src={Logo} alt="" />
         </div>
 
-        <div className="divPesquisa">
-          <form class="d-flex justify-content-center" role="search">
-            <input
-              onKeyDown={handleKeyPress}
-              onChange={(e) => setSearch(e.target.value)}
-              type="text"
-              placeholder="Pesquise por filmes"
-            />
-            <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
-          </form>
+        
+        <div class="divPesquisa ">
+          <div class="search-bar ">
+            <div class="input-group ">
+              <input
+                onKeyDown={handleKeyPress}
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <button
+                class="btn btn-outline-secondary bg-black"
+                type="button"
+                id="search-addon"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
         </div>
+
         <div className="divMenu">
           <button
-            class="navbar-toggler"
+            class="navbar-toggler "
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
@@ -87,7 +101,7 @@ const App = () => {
       </nav>
 
       {movies?.length > 0 ? (
-        <div className="container">
+        <div class="container d-flex justify-content-center align-items-center flex-wrap mt-3 w-100">
           {movies.map((movie, index) => (
             <MovieCard key={index} apiUrl={apiUrl} {...movie} />
           ))}
