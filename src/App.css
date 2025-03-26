@@ -4,7 +4,7 @@
   --bs-body-bg: rgb(255, 255, 255) !important;
 } ''
 [data-bs-theme="dark"]{
-  --bs-body-bg:  rgb(0, 0, 0) !important;
+  --bs-body-bg:  rgb(134, 31, 31) !important;
 }
 
 * {
@@ -15,7 +15,7 @@
 
 body {
   font-family: var(--font-raleway);
-  background: #212426;
+  background: #000000;
 }
 
 

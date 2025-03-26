@@ -15,13 +15,17 @@ const MovieDescription = (props) => {
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
       <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.movieInfo}>
+        <div class="movieInfo bg-dark position-relative rounded-3">
           <img
             src={movieDesc.Poster}
             alt={`Imagem da capa do filme ${movieDesc.Title}`}
           />
-          <button className={styles.btnClose} onClick={props.click}>
-            X
+          <button
+            class="btnClose position-absolute top-0 end-0 m-3 rounded-circle bg-dark text-white border-0"
+            aria-label="Fechar"
+            onClick={props.click}
+          >
+            <span aria-hidden="true">&times;</span>
           </button>
           <div className={styles.movieType}>
             <div>
