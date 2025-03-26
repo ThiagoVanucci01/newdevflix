@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --font-raleway: "Raleway", sans-serif;
+  --bs-body-bg: rgb(255, 255, 255) !important;
+} ''
+[data-bs-theme="dark"]{
+  --bs-body-bg:  rgb(0, 0, 0) !important;
 }
 
 * {
@@ -15,55 +18,8 @@ body {
   background: #212426;
 }
 
-#app {
-  padding: 4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
-.logo {
-  max-width: 100%;
-  overflow: hidden;
-}
 
-.logo img {
-  width: 70%;
-  height: auto;
-  display: block;
-  margin: auto;
-}
-
-.search {
-  width: 70%;
-  margin: 4rem 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 1.75rem;
-  border-radius: 4rem;
-  background: #1f2123;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-}
-
-.search input {
-  flex: 1;
-  border: none;
-  padding-right: 1rem;
-  outline: none;
-  color: #a1a1a1;
-  background: #1f2123;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.search img {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
 
 .empty {
   width: 100%;
@@ -75,13 +31,13 @@ body {
   color: #f9d3b4;
 }
 
-.container {
-  width: 100%;
-  margin-top: 3rem;
+#socialLinks {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  padding: 24px;
+  gap: 16px;
+
+  font-size: 24px;
 }
 
 @media screen and (max-width: 600px) {
@@ -115,4 +71,41 @@ body {
     width: 100%;
     margin: 1rem;
   }
+}
+.divLogo {
+  width: 10%;
+  padding-left: 10px;
+  
+}
+
+.divPesquisa {
+  width: 80%;
+
+}
+
+.divMenu{
+  width: 10%;
+  padding-left: 80px;
+  
+}
+
+.search-bar {
+  max-width: 500px;
+  margin: auto auto;
+}
+
+.search-bar .input-group {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .form-control {
+  border: none;
+  padding-left: 20px;
+}
+
+.search-bar .btn {
+  border: none;
+  padding: 10px 20px;
 }

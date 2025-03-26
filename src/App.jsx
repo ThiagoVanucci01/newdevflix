@@ -6,10 +6,26 @@ import { useEffect, useState } from "react";
 import Footer from "./components/footer/footer";
 import MovieCard from "./components/movieCard/MovieCard";
 import NavBar from "./components/navBar/NavBar";
+import SocialLinks from "./components/socialLinks/SocialLinks";
+import "./App.css";
+import "./scss/styles.scss"
 
 const App = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
+
+  const mudaTema = () => {
+    const tema = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    document.documentElement.setAttribute("data-bs-theme", tema);
+  };
+  mudaTema();
+
+  // Listen for changes in the color scheme
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", mudaTema);
 
   //Utilizando chave de API do arquivo .env
   //const apiKey = import.meta.env.VITE_OMDB_API_KEY;
@@ -36,21 +52,56 @@ const App = () => {
   };
 
   return (
-    <div id="app">
-      <NavBar logo={Logo}/>
+    <div class="">
+      <nav
+        class="navbar bg-secondary border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <div></div>
+        <div className="divLogo">
+          <img width="175" height="50" class="m-2" src={Logo} alt="" />
+        </div>
 
-      <div className="search">
-        <input
-          onKeyDown={handleKeyPress}
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Pesquise por filmes"
-        />
-        <img onClick={() => searchMovies(search)} src={Lupa} alt="" />
-      </div>
+        
+        <div class="divPesquisa ">
+          <div class="search-bar ">
+            <div class="input-group ">
+              <input
+                onKeyDown={handleKeyPress}
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <button
+                class="btn btn-outline-secondary bg-black"
+                type="button"
+                id="search-addon"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="divMenu">
+          <button
+            class="navbar-toggler "
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
 
       {movies?.length > 0 ? (
-        <div className="container">
+        <div class="container d-flex justify-content-center align-items-center flex-wrap mt-3 w-100">
           {movies.map((movie, index) => (
             <MovieCard key={index} apiUrl={apiUrl} {...movie} />
           ))}
@@ -63,6 +114,16 @@ const App = () => {
         devName={" ThiagoVanucci"}
         devLink={"https://github.com/ThiagoVanucci01"}
       />
+      <div id="socialLinks">
+        <SocialLinks
+          link={"https://github.com/ThiagoVanucci01"}
+          icon={"logo-github"}
+        />
+        <SocialLinks
+          link={"https://www.instagram.com/thiago_vanucc1/"}
+          icon={"logo-instagram"}
+        />
+      </div>
     </div>
   );
 };
