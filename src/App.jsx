@@ -3,8 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import Logo from "./assets/devflix.png";
 import Lupa from "./assets/search.svg";
 import { useEffect, useState } from "react";
-import Footer from "./components/Footer/Footer";
-
+import Footer from "./components/Footer/Footer.jsx"
 import NavBar from "./components/NavBar/NavBar";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 import "./App.css";
